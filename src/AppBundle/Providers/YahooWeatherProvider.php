@@ -22,6 +22,8 @@ class YahooWeatherProvider implements WeatherProviderInterface
         $obj = json_decode($json, true);
         $temp = $obj['query']['results']['channel']['item']['condition']['temp'];
 
+        $temp = round(($temp - 32) / 1.8000, 0);
+
         return new Weather($temp);
     }
 }

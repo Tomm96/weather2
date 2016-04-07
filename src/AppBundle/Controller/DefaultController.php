@@ -14,28 +14,14 @@ class DefaultController extends Controller
      */
     public function indexAction($city)
     {
-        
-        
-        // replace this example code with whatever you need
-       // return $this->render('default/index.html.twig', array(
-        //    'city' => $city,
-        //));
-        
         $location = new Location($city);
         
-        $getWeahterProvider = $this->get('weather.provider.yahoo');
+        $getWeatherProvider = $this->get('weather.provider.yahoo');
 
-
-        
-        
-        $weather = $getWeahterProvider->fetch($location);
-
-        $temp = round(($weather->getTemperature() - 32) / 1.8000, 0);
+        $weather = $getWeatherProvider->fetch($location);
 
         return $this->render('default/index.html.twig', array(
-            'weather' => $temp,
+            'weather' => $weather->getTemperature(),
         ));
-
-        
     }
 }
