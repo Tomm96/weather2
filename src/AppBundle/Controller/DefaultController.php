@@ -16,9 +16,9 @@ class DefaultController extends Controller
     {
         $location = new Location($city);
         
-        $getWeatherProvider = $this->get('weather.provider.yahoo');
+        $provider = $this->get('weather.provider.yahoo');
 
-        $weather = $getWeatherProvider->fetch($location);
+        $weather = $provider->fetch($location);
 
         return $this->render('default/index.html.twig', array(
             'weather' => $weather->getTemperature(),
