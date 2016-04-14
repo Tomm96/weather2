@@ -1,13 +1,8 @@
 <?php
-
-
-namespace AppBundle;
-
-
+namespace Nfq\WeatherBundle;
 class Weather
 {
     private $temperature;
-
     /**
      * Weather constructor.
      * @param $temp
@@ -16,7 +11,6 @@ class Weather
     {
         $this->temperature = $temp;
     }
-
     /**
      * @return mixed
      */
@@ -24,6 +18,4 @@ class Weather
     {
         return $this->temperature;
     }
-
-
 }

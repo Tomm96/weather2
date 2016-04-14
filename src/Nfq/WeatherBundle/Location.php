@@ -1,13 +1,8 @@
 <?php
-
-
-namespace AppBundle;
-
-
+namespace Nfq\WeatherBundle;
 class Location
 {
     private $city;
-
     /**
      * Location constructor.
      * @param $city
@@ -16,7 +11,6 @@ class Location
     {
         $this->city = $city;
     }
-
     /**
      * @return mixed
      */

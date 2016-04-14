@@ -1,11 +1,8 @@
 <?php
 
-namespace AppBundle\Controller;
+namespace Nfq\WeatherBundle\Controller;
 
-use AppBundle\Location;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
@@ -15,8 +12,8 @@ class DefaultController extends Controller
     public function indexAction($city)
     {
         $location = new Location($city);
-        
-        $provider = $this->get('weather.provider.yahoo');
+
+        $provider = $this->get('nfq_weather');
 
         $weather = $provider->fetch($location);
 
